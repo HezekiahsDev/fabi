@@ -1,0 +1,114 @@
+/* Importing Inter font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* General Styles */
+body {
+  font-family: "Inter", sans-serif; /* Updated to Inter font */
+  color: #fff; /* Change text color to white for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("/assets/images/fabi.jpeg");
+  background-size: cover;
+  background-position: center center; /* Center the background image */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adding blur effect to background */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  filter: blur(10px); /* Adjust blur intensity */
+  z-index: -1; /* Behind the content */
+}
+
+/* Green overlay for contrast */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 128, 0, 0.2); /* Green semi-transparent overlay */
+  z-index: -1; /* Behind the content */
+}
+
+/* Logo Styling */
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 200px; /* Increased size */
+  height: auto;
+  animation: roll 5s linear infinite; /* Added rolling animation */
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Rolling Animation */
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Hover Effects */
+.btn {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-title {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade {
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+}
