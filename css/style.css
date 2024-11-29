@@ -49,7 +49,7 @@ body::after {
 }
 
 .logo {
-  max-width: 200px; /* Increased size */
+  max-width: 200px;
   height: auto;
   animation: roll 5s linear infinite; /* Added rolling animation */
   transition: transform 0.3s ease;
